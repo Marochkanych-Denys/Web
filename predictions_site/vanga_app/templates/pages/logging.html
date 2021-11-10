@@ -1,0 +1,32 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<style type="text/css">
+	input, button {
+		margin: 1em 1em 0em 1em;
+	}
+
+	.form {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 20em;
+	}
+
+	form {
+		padding-bottom: 1em;
+		background: #bbb;
+	}
+</style>
+
+<div class="form">
+
+<form action="{% url 'vanga_app:check' %}" method="POST">{% csrf_token %}
+	<p><a align="center"> &nbsp&nbsp   Увійдіть в акаунт   </a><hr>
+	<input type="text" placeholder="логін" required maxlength="100" name="name"><br>
+	<input type="text" placeholder="пароль" required maxlength="100" name="password"><p>
+	<button type="submit">Увійти</button>
+</form>
+</div>
+{% endblock %}

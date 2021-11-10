@@ -1,0 +1,36 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<style type="text/css">
+	input, button {
+		margin: 1em 1em 0em 1em;
+	}
+
+	.form {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 20em;
+	}
+
+	form {
+		padding-bottom: 1em;
+		background: #bbb;
+	}
+</style>
+
+<div class="form">
+
+<form action="{% url 'vanga_app:create' %}" method="POST">{% csrf_token %}
+	<p><a align="center"> &nbsp&nbsp   Введіть дані для реєстрації   </a><hr>
+	<input type="text" placeholder="логін" required maxlength="100" name="name"><br>
+	<input type="text" placeholder="пароль" required maxlength="100" name="password"><p>
+	<input type="text" placeholder="номер карти" required maxlength="16" name="number"><br>
+	<input type="text" placeholder="дата" required maxlength="5" name="date">
+	<input type="text" placeholder="cvv" required maxlength="3" name="cvv"><p>
+	<button type="submit">Зареєструватись</button>
+</form>
+</div>
+
+{% endblock %}

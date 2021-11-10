@@ -1,0 +1,30 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<style type="text/css">
+	input, button {
+		margin: 1em 1em 0em 1em;
+	}
+
+	.form {
+		align-items: center;
+		justify-content: center;
+		height: 40em;
+	}
+
+	form {
+		padding-bottom: 1em;
+		background: #C0C0C0;
+	}
+</style>
+<div class="form">
+
+<img src="https://faktor.bg/media/article_gallery/uploads/Images_3/V/vanga.jpg"  width="546" height="437" hspace="500" />
+
+<form >
+	<h2 align="center">Вітаю!!! Ти-{{ predict.name }}!!!</h2>{% csrf_token %}
+	<h2 align="center">{{ predict.detail }}</h2>
+</form>
+</div>
+{% endblock %}
